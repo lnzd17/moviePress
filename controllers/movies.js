@@ -8,8 +8,10 @@ router.get('/', (req, res) => {
 
   axios.get(popularMoviesURL)
     .then((api_res) => {
-      console.log(api_res);
       res.render('application', {
+        locals: {
+          movies: api_res.data
+        },
         partials: {
           yield: 'views/movies/index.html'
         }
