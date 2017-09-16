@@ -24,7 +24,14 @@ router
   const movieURL = `http://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.MOVIE_API_KEY}&language=en-US`;
   axios.get(movieURL)
   .then((api_res) => {
-    res.send('hello');
+    res.render('application', {
+      locals: {
+        movie: api_res.data
+      },
+      partials: {
+        yield: 'views/movies/show.html'
+      }
+    });
   }).catch((err) => {
     return console.log(err);
   });
