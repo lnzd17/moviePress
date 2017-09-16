@@ -8,6 +8,11 @@ router
       yield: 'views/users/sign-up.html'
     }
   });
+})
+.post('/sign-up',(req, res) => {
+  console.log('SIGN UP POST REQUEST:');
+  console.log(req.body);
+  res.send(JSON.stringify(req.body));
 });
 
 module.exports = router;
