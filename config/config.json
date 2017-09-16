@@ -1,14 +1,10 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "password",
     "database": "movie_press",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": "password",
     "database": "movie_press_test",
     "host": "127.0.0.1",
     "dialect": "postgres"

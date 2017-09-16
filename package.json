@@ -22,8 +22,10 @@
     "express-es6-template-engine": "^2.0.1",
     "graceful-fs": "^4.1.11",
     "minimatch": "^3.0.4",
+    "node-repl": "^2.0.2",
     "pg": "6.1.5",
     "pg-hstore": "2.3.2",
+    "repl-promised": "^0.1.0",
     "sequelize": "3.30.4",
     "sequelize-cli": "2.7.0"
   }
