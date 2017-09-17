@@ -13,10 +13,15 @@ router
 .post('/sign-up',(req, res) => {
   models.User.create(req.body, { fields: ['username', 'email', 'password'] })
   .then((user) => {
-    res.send(JSON.stringify(req.body));
+    res.cookie('movie_press_token', user.id, { httpOnly: true, maxAge: 86400000 });
+    res.redirect('/');
   }).catch((error) => {
     res.status(500);
   });
+})
+.get('/sign-out', (req, res) => {
+  res.clearCookie('movie_press_token');
+  res.redirect('/');
 });
 
 module.exports = router;
